@@ -19,9 +19,10 @@ LazyData: true
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.1.2
 Suggests:
-  testthat,
-  datasets
+    testthat (>= 3.0.0),
+    datasets
 Imports:
   dplyr,
   tidyverse,
   ggplot2
+Config/testthat/edition: 3

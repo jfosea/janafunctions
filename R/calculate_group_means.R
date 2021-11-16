@@ -22,8 +22,15 @@ calculate_group_means <- function(data, group_name, quantity_name) {
   quantity <- eval(substitute(quantity_name), data)
 
   # check wrapper for errors
-  if (!is.factor(group) ) {
-    stop(paste("The second input must be a factor variable. Your input is of class", class(group), "."))
+  if (!is.character(group)) {
+    if(!is.factor(group)) {
+    stop(paste("The second input must be a factor or character variable. Your input is of class", class(group), "."))
+    }
+  }
+  if (!is.factor(group)) {
+    if(!is.character(group)) {
+      stop(paste("The second input must be a factor or character variable. Your input is of class", class(group), "."))
+    }
   }
   if (!is.numeric(quantity)) {
     stop(paste("The third input must be a numeric variable. Your input is of class", class(quantity), "."))

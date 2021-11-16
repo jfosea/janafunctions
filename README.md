@@ -6,33 +6,33 @@
 is not meant to be extensive but rather is used as a practice for
 building packages.**
 
-# janafactors
+# janafunctions
 
 <!-- badges: start -->
 <!-- badges: end -->
 
-dplyr’s `group_by` and `summarise` functions are often used in
-conjuction with each other, specifically, finding the mean of a
-quantitative variable by group. In addition to the summary table
-provided by these two functions, a boxplot of the quanitative variable
-by group is often helpful in showing the distribution of the data. This
-package provides a function, `calculate_groups_mean`, that combines the
-funcitonality of `group_by` and `summarise` as well as visualization
-through a boxplot.
+The goal of janafunctions is to …
 
 ## Installation
 
-You can install janafunctions like so:
+You can install the released version of janafunctions from
+[CRAN](https://CRAN.R-project.org) with:
 
 ``` r
-devtools::install_github("jfosea/janafunctions")
-#> Skipping install of 'janafunctions' from a github remote, the SHA1 (f00a49e9) has not changed since last install.
-#>   Use `force = TRUE` to force installation
+install.packages("janafunctions")
 ```
 
-## Demo
+And the development version from [GitHub](https://github.com/) with:
 
-For the demo, I will use data sets from the
+``` r
+# install.packages("devtools")
+devtools::install_github("jfosea/janafunctions")
+```
+
+## Example
+
+This is a basic example which shows you how to solve a common problem. I
+will use data sets from the
 [datasets](https://stat.ethz.ch/R-manual/R-devel/library/datasets/html/00Index.html)
 package, particularly the *InsectSprays* data set. Here is a preview of
 the data.
@@ -50,6 +50,9 @@ head(InsectSprays)
 #> 6    12     A
 ```
 
+What is special about using `README.Rmd` instead of just `README.md`?
+You can include R chunks like so:
+
 I want to look at the mean number of *counts* grouped by *spray*. And so
 I will run the following into my function `calculate_group_means`
 
@@ -57,7 +60,7 @@ I will run the following into my function `calculate_group_means`
 calculate_group_means(InsectSprays, spray, count)
 ```
 
-<img src="man/figures/README-unnamed-chunk-4-1.png" width="100%" />
+<img src="man/figures/README-unnamed-chunk-3-1.png" width="100%" />
 
     #> # A tibble: 6 x 2
     #>   spray  mean
