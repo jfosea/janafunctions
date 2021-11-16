@@ -11,7 +11,16 @@ building packages.**
 <!-- badges: start -->
 <!-- badges: end -->
 
-The goal of janafunctions is to …
+## Description
+
+dplyr’s `group_by` and `summarise` functions are often used in
+conjuction with each other, specifically, finding the mean of a
+quantitative variable by group. In addition to the summary table
+provided by these two functions, a boxplot of the quanitative variable
+by group is often helpful in showing the distribution of the data. This
+package provides a function, `calculate_groups_mean`, that combines the
+funcitonality of `group_by` and `summarise` as well as visualization
+through a boxplot.
 
 ## Installation
 
@@ -50,9 +59,6 @@ head(InsectSprays)
 #> 6    12     A
 ```
 
-What is special about using `README.Rmd` instead of just `README.md`?
-You can include R chunks like so:
-
 I want to look at the mean number of *counts* grouped by *spray*. And so
 I will run the following into my function `calculate_group_means`
 
@@ -71,3 +77,6 @@ calculate_group_means(InsectSprays, spray, count)
     #> 4 D      4.92
     #> 5 E      3.5 
     #> 6 F     16.7
+
+The results show a `tibble` summary table that contains the means by
+groups. In addition, the function outputs a boxplot by groups.
